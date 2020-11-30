@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Courses</h1>
-    <table class="table table-bordered table-striped table-sm">
+    <table class="table table-striped table-hover table-inverse shadow" style="background-color:rgb(236, 232, 232); "><br>
         <thead>
             <th>Name</th>
             <th>Description</th>

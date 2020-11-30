@@ -2,14 +2,30 @@
 
 @section('content')
 
-<h1>List of Users</h1>
-<table class="table table-bordered table-striped table-sm">
-    <thead>
+@if($info = Session::get('info'))
+
+    <div class="card">
+        <div class="card-body bg-success text-white">
+            {{$info}}
+        </div>
+    </div>
+
+@endif
+
+<div class="float-right">
+    <a href="{{url('/users/create')}}" class="btn btn-info" >
+    &#10133;  New
+    </a>
+</div>
+<h1 style="text-align:center;">List of Users</h1>
+<table class="table table-striped table-hover table-inverse shadow" style="background-color:rgb(236, 232, 232); "><br>
+       <thead>
         <tr>
             <th>ID#</th>
             <th>Last Name</th>
             <th>First Name</th>
             <th>Email</th>
+             <th></th>
         </tr>
     </thead>
     <tbody>
@@ -20,6 +36,7 @@
             <td>{{$u->lname}}</td>
             <td>{{$u->fname}}</td>
             <td>{{$u->email}}</td>
+            <td><a href="{{url('/users/edit', ['id'=>$u])}}" class="btn btn-secondary btn-sm" >&#x270E;</a></td>
         </tr>
 
         @endforeach

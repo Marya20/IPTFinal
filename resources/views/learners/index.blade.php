@@ -2,9 +2,9 @@
 
 @section('content')
 
-<h1>Learners</h1>
+<h1 style="text-align:center;">Learners</h1>
 
-<table class="table table-bordered table-striped table-sm">
+<table class="table table-striped table-hover table-inverse shadow" style="background-color:rgb(236, 232, 232); "><br>
     <thead>
         <th>ID#</th>
         <th>Last Name</th>

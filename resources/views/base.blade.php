@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <script src="{{url('js/bootstrap.min.css')}}"></script>
-    <title>Lentrix CourseWare</title>
+    <title>CourseWare</title>
 </head>
-<body>
+<body style="background-color:rgb(236, 232, 232);">
 
     @include('nav')
 
-    <div class="container main-container">
+    <div class="container main-container" >
         @yield('content')
     </div>
 
     <footer>
-        Copyright &copy; 2020. Lentrix CourseWare, Inc. <br>
+        Copyright &copy; 2020. CourseWare. <br>
         All rights reversed.
     </footer>
 </body>
