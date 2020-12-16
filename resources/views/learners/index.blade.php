@@ -1,15 +1,22 @@
 @extends('base')
 
 @section('content')
+@include('info')
 
-<h1 style="text-align:center;">Learners</h1>
+<div class="float-right">
+    <a href="{{url('/courses/create')}}" class="btn btn-primary">
+    &#10133;  New 
+    </a>
+</div>
+<h1 style="text-align:center;">Learners</h1><br>
 
-<table class="table table-striped table-hover table-inverse shadow" style="background-color:rgb(236, 232, 232); "><br>
+<table class="table table-bordered table-striped table-sm">
     <thead>
         <th>ID#</th>
         <th>Last Name</th>
         <th>First Name</th>
         <th>Status</th>
+        <th class="text-center"></th>
     </thead>
     <tbody>
         @foreach($learners as $ln)
@@ -19,6 +26,9 @@
             <td>{{$ln->user->lname}}</td>
             <td>{{$ln->user->fname}}</td>
             <td>{{$ln->status}}</td>
+            <td class="text-center">
+                <a href="{{url('/learners/' . $ln->id)}}" class="btn btn-info btn-sm">&#x270E;</a>
+            </td>
         </tr>
 
         @endforeach

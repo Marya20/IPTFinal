@@ -40,6 +40,15 @@ class UserController extends Controller
 
         $user->update($request->all());
 
-        return redirect('/users')->with('info', "Record updated $user->fname $user->lname.");
+        return redirect('/users')->with('info', "User $user->fname $user->lname has been updated.");
+    }
+
+    public function delete(Request $request) {
+        $userId = $request['user_id'];
+        $user = User::find($userId);
+        $name = $user->lname . ", " . $user->fname;
+        $user->delete();
+
+        return redirect('/users')->with('info', "User $name has been deleted.");
     }
 }
